@@ -75,15 +75,15 @@
     register: output
   - debug: var=output.stdout_lines
 
-  - name: Add a container to a network, leaving existing containers connected
-    docker_network:
-      name: "{{ docker_network_name }}"
-      connected:
-        - management1
-        - ndb1
-        - ndb2
-        - mysql1
-      appends: yes
+#  - name: Add a container to a network, leaving existing containers connected
+#    docker_network:
+#      name: "{{ docker_network_name }}"
+#      connected:
+#        - management1
+#        - ndb1
+#        - ndb2
+#        - mysql1
+#      appends: yes
 
 #  - name: get mysql password
 #    shell : sleep 30 ; docker logs mysql1 2>&1 | grep PASSWORD | awk '{print $5}'
