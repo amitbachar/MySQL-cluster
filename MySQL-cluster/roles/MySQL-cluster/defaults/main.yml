@@ -1,8 +1,0 @@
----
-# defaults file for MySQL-cluster
-docker_network_name: mysql-cluster-net
-MyNewPass: TopSecret
-DB1: MySqlDb1
-DB2: MySqlDb2
-DB3: MySqlDb3
-

@@ -1,6 +1,0 @@
----
-# install mysql cluster 
-- include: install_mysql_cluster.yml
-
-# create db
-- include: create-mysql_db.yml
