@@ -6,6 +6,6 @@
 
   - name: create test mysql DB 
     #shell : docker exec -i mysql1 mysql -uroot -p'{{ mysql_password }}' -e 'CREATE DATABASE MyTestDb'
-    shell : docker exec -i mysql1 mysql -uroot -p'{{ mysql_password.stdout }}' -e 'CREATE DATABASE '{{ MyTestDb }}''
+    shell : docker exec -i mysql1 mysql -uroot -p'{{ mysql_password.stdout }}' -e 'CREATE DATABASE '{{ DB1 }}''
     register: output
   - debug: var=output.stdout_lines
