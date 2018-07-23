@@ -6,9 +6,9 @@ MySQL-cluster to deploy MySql cluster on docker.
 Requirements
 ------------
 
-python >= 2.6
-docker-py >= 1.7.0
-Docker API >= 1.20
+    python >= 2.6
+    docker-py >= 1.7.0
+    Docker API >= 1.20
 
 Role Variables
 --------------
