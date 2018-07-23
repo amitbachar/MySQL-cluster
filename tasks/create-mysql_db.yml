@@ -1,0 +1,11 @@
+---
+  - name: get mysql password
+    shell : sleep 22 ; docker logs mysql1 2>&1 | grep PASSWORD | awk '{print $5}'
+    register: mysql_password
+  - debug: var=mysql_password.stdout
+
+  - name: create test mysql DB 
+    #shell : docker exec -i mysql1 mysql -uroot -p'{{ mysql_password }}' -e 'CREATE DATABASE MyTestDb'
+    shell : docker exec -i mysql1 mysql -uroot -p'{{ mysql_password.stdout }}' -e 'CREATE DATABASE '{{ DB1 }}''
+    register: output
+  - debug: var=output.stdout_lines
