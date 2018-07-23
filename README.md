@@ -2,18 +2,18 @@
 dockerized MySQL cluster installation 
 
 
-inventory file :
+## Requirements
 
-host1 ansible_connection=ssh ansible_user=admin ansible_host=eaasrt1
-[database]
-host1
+No special requirements; note that this role requires root access, so either run it in a playbook with a global `become: yes`, or invoke the role in your playbook like:
+
+    - hosts: database
+      roles:
+        - role: MySQL-cluster
+          become: yes
+    
 
 
-playbook:
+Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-- hosts: database
-  roles:
-    - role: MySQL-cluster 
-      become: yes
-      
-      
+    docker_network_name: mysql-cluster-net
+    MyNewPass: TopSecret
