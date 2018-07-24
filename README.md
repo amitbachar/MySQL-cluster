@@ -35,16 +35,22 @@ Including an example of how to use your role (for instance, with variables passe
 
 Test
 -----
+
 obtain the mysql password:
     docker logs mysql1 2>&1 | grep PASSWORD | awk '{print $5}'
+
 login to the mysql as root:
     docker exec -it mysql1 mysql -uroot -p'********************' 
+
 list the created DB:
     docker exec -i mysql1 mysql -uroot -p'****************' -e 'show databases;'
+
 connect to specific DB:
     docker exec -it mysql1 mysql -uroot -p'****************' MySqlDb2
+
 create table in batch mode:
     docker exec -i mysql1 mysql -uroot -p'*****************' MySqlDb2 < create_shop_table.sql
+
 
 License
 -------
