@@ -5,4 +5,8 @@ MyNewPass: TopSecret
 DB1: MySqlDb1
 DB2: MySqlDb2
 DB3: MySqlDb3
+DBLIST:
+  - MySqlDb1
+  - MySqlDb2
+  - MySqlDb3
 
