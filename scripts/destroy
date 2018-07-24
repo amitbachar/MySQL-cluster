@@ -1,0 +1,2 @@
+docker rm  $(docker ps -q --filter ancestor='mysql/mysql-cluster') -f
+docker network rm mysql-cluster-net

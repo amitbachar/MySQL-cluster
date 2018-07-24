@@ -1,0 +1,1 @@
+ansible-playbook -i ../mqsql-cluster-inventory ../mqsql-cluster.yml -vv
