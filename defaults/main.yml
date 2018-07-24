@@ -3,10 +3,8 @@
 docker_network_name: mysql-cluster-net
 MyNewPass: TopSecret
 DB1: MySqlDb1
-DB2: MySqlDb2
-DB3: MySqlDb3
 DBLIST:
-  - MySqlDb1
-  - MySqlDb2
-  - MySqlDb3
+  - name: "MySqlDb1"
+  - name: "MySqlDb2"
+  - name: "MySqlDb3"
 
