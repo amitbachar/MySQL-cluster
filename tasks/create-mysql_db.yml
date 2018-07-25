@@ -1,6 +1,11 @@
 ---
   - name: get mysql password
-    shell : sleep 22 ; docker logs mysql1 2>&1 | grep PASSWORD | awk '{print $5}'
+    shell : |
+      until [ ! -z $mysql_password ] 
+      do 
+        mysql_password=`docker logs mysql1 2>&1 | grep PASSWORD | awk '{print $5}'`
+      done
+      docker logs mysql1 2>&1 | grep PASSWORD | awk '{print $5}'
     register: mysql_password
   - debug: var=mysql_password.stdout
 
