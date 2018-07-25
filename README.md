@@ -52,19 +52,19 @@ ansible-playbook -i inventories/mysql-cluster-inventory mysql-cluster.yml --tags
 Test
 -----
 
-#### obtain the mysql password:
+#### obtain password:
     docker logs mysql1 2>&1 | grep PASSWORD | awk '{print $5}'
 
-#### login to the mysql as root:
+#### login as root:
     docker exec -it mysql1 mysql -uroot -p'********************' 
 
-#### list the created DB:
+#### list Databases:
     docker exec -i mysql1 mysql -uroot -p'****************' -e 'show databases;'
 
-#### connect to specific DB:
+#### connect to Database:
     docker exec -it mysql1 mysql -uroot -p'****************' MySqlDb2
 
-#### create table in batch mode:
+#### create table batch mode:
     docker exec -i mysql1 mysql -uroot -p'*****************' MySqlDb2 < create_shop_table.sql
 
 
