@@ -14,7 +14,7 @@ MySQL-cluster to deploy MySql cluster on docker.
 
 # Role Variables
 --------------
-## defaults file for MySQL-cluster
+
 ```
 docker_network_name: mysql-cluster-net
 MyNewPass: TopSecret
