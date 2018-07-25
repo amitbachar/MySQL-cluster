@@ -65,8 +65,17 @@ Test
     docker exec -it mysql1 mysql -uroot -p'****************' MySqlDb2
 
 #### create table batch mode:
-    docker exec -i mysql1 mysql -uroot -p'*****************' MySqlDb2 < create_shop_table.sql
-
+    docker exec -i mysql1 mysql -uroot -p'*****************' MySqlDb2 < create_pet_table.sql
+    
+#### load data to pet table:
+  ##### copy pet.txt to container
+    cd MySQL-cluster/tests
+    docker cp pet.txt mysql1:/tmp/pet.txt
+  ###### validate file copied to mysql1 containet:
+    docker exec -i mysql1 cat /tmp/pet.txt
+  ##### load data to pet table and validate it got populated: 
+    docker exec -i mysql1 mysql -uroot -p'***********' MySqlDb2 < load_data_to_pet_table.sql
+    
 
 License
 -------
