@@ -9,8 +9,7 @@
     register: mysql_password
   - debug: var=mysql_password.stdout
 
-  - name: create test mysql DB
-    #shell : docker exec -i mysql1 mysql -uroot -p'{{ mysql_password.stdout }}' -e 'CREATE DATABASE '{{ DB1 }}''
+  - name: create test mysql Databases
     shell : docker exec -i mysql1 mysql -uroot -p'{{ mysql_password.stdout }}' -e 'CREATE DATABASE '{{ item.name }}''
     with_items: "{{ DBLIST }}"
     #loop: "{{ DBLIST }}" 
