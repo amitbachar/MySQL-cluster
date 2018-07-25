@@ -2,9 +2,9 @@
 # install mysql cluster
 - include_tasks: install_mysql_cluster.yml
   tags:
-    - configuration
+    - installation
 
 # create db
 - include_tasks: create-mysql_db.yml
   tags:
-    - test
+    - validation
