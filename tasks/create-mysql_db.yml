@@ -10,7 +10,7 @@
   - debug: var=mysql_password.stdout
 
   - name: create test mysql Databases
-    shell : sleep 30 ; docker exec -i mysql1 mysql -uroot -p'{{ mysql_password.stdout }}' -e 'CREATE DATABASE IF NOT EXISTS '{{ item.name }}''
+    shell : sleep 122 ; docker exec -i mysql1 mysql -uroot -p'{{ mysql_password.stdout }}' -e 'CREATE DATABASE IF NOT EXISTS '{{ item.name }}''
     with_items: "{{ DBLIST }}"
     #loop: "{{ DBLIST }}" 
     when: item.name != ""
